@@ -105,9 +105,7 @@ public class ArrayUtils {
         Object[] copyArr = objectArray;
         Arrays.sort(copyArr);
 
-        int leastCommonCount = 1;
-        int tempCount = 0;
-        int currentIndex = 0;
+        int leastCommonCount = 0;
 
         for (int i = 0; i < noDuplicates.length; i++) {
             if (getNumberOfOccurrences(firstCopy, noDuplicates[i]) < leastCommonCount) {

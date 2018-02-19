@@ -10,7 +10,7 @@ public abstract class Pet implements Animal {
 
     String name;
     int age;
-    ArrayList<PetOwner> petOwner;
+    PetOwner petOwner;
 
     /**
      * nullary constructor
@@ -18,16 +18,14 @@ public abstract class Pet implements Animal {
      */
     public Pet() {
 
-        this.name = "";
-        this.age = 0;
+
     }
 
     /**
      * @param name name of this pet
      */
     public Pet(String name) {
-        this.name = name;
-        age = 0;
+        this.name = "";
     }
 
 
@@ -35,8 +33,8 @@ public abstract class Pet implements Animal {
      * @param age age of this pet
      */
     public Pet(int age) {
-        this.age = age;
-        this.name = "";
+        this.age = 0;
+        //this.name = "";
     }
 
     /**
@@ -44,24 +42,22 @@ public abstract class Pet implements Animal {
      * @param age age of this pet
      */
     public Pet(String name, int age) {
-        this.name = name;
-        this.age = age;
+        this.name = "";
+        this.age = 0;
     }
 
     /**
      * @return name of this pet
      */
     public String getName() {
-
-        return name;
+        return this.name;
     }
 
     /**
      * @return age of this pet
      */
     public Integer getAge() {
-
-        return age;
+        return this.age;
     }
 
     /**
@@ -70,7 +66,7 @@ public abstract class Pet implements Animal {
      */
     public void setOwner(PetOwner newPetOwner) {
 
-//        this.petOwner = newPetOwner;
+      this.petOwner = newPetOwner;
 
 
     }
@@ -79,7 +75,7 @@ public abstract class Pet implements Animal {
      * @return PetOwner object whose composite `pets` collection contains this Pet instance
      */
     public PetOwner getOwner() {
+        return null;
 
-       return null;
     }
 }

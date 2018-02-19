@@ -1,28 +1,36 @@
 package com.zipcodewilmington.assessment1.part3;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by leon on 2/16/18.
  */
 public class PetOwner {
 
+    Pet[] pets;
     String name;
+
 
     /**
      * @param name name of the owner of the Pet
      * @param pets array of Pet object
      */
     public PetOwner(String name, Pet... pets) {
+
         this.name = name;
-//        this.pet = pets;
+        this.pets = pets;
+
     }
 
     /**
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet pet) {
-
+        List<Pet> petList = Arrays.asList(pets);
+        petList.add(pet);
 
 
     }
@@ -32,6 +40,7 @@ public class PetOwner {
      */
     public void removePet(Pet pet) {
 
+
     }
 
     /**
@@ -39,6 +48,7 @@ public class PetOwner {
      * @return true if I own this pet
      */
     public Boolean isOwnerOf(Pet pet) {
+
         return null;
     }
 

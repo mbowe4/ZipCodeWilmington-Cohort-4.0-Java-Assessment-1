@@ -5,8 +5,7 @@ package com.zipcodewilmington.assessment1.part3;
  */
 public class Cat extends Pet {
 
-    String name;
-    int age;
+//
     /**
      * @param name name of this Cat
      * @param age age of this Cat
