@@ -1,6 +1,8 @@
 package com.zipcodewilmington.assessment1.part2;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by leon on 2/16/18.
@@ -56,18 +58,21 @@ public class ArrayUtils {
      */
     public static Object getMostCommon(Object[] objectArray) {
 
-        int currentCount = 1, mostCommonCount;
+        int currentCount = 1;
+        int mostCommonCount;
+
         Object mostCommon = objectArray[0];
-        Object temp = 0;
+        Object tempCount = 0;
+
         for (int i = 0; i < (objectArray.length - 1); i++) {
-            temp = objectArray[i];
+            tempCount = objectArray[i];
             mostCommonCount = 0;
             for (int j = 1; j < objectArray.length; j++) {
-                if (temp == objectArray[j])
+                if (tempCount == objectArray[j])
                     mostCommonCount++;
             }
             if (mostCommonCount > currentCount) {
-                mostCommon = temp;
+                mostCommon = tempCount;
                 currentCount = mostCommonCount;
             }
         }
@@ -81,37 +86,29 @@ public class ArrayUtils {
      * @return the least frequently occurring object in the array
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
-    public static Object getLeastCommon(Object[] objectArray) {
+    public static Object getLeastCommon(Integer[] objectArray) {
 
 
-        Object[] firstCopy = objectArray;
+        int currentCount = 1;
+        int leastCommonCount;
 
-        Object[] noDuplicates = new Object[0];
-        for (int i = 0; i < firstCopy.length - 1; i++) {
-            if (!firstCopy[i].equals(firstCopy[i + 1])) {
-                noDuplicates = Arrays.copyOf(noDuplicates, noDuplicates.length + 1);
-                noDuplicates[noDuplicates.length - 1] = firstCopy[i];
+        Object leastCommon = objectArray[0];
+        Object temp = 0;
+
+        for (int i = 0; i < (objectArray.length - 1); i++) {
+            temp = objectArray[i];
+            leastCommonCount = 0;
+            for (int j = 1; j < objectArray.length; j++) {
+                if (temp == objectArray[j])
+                    leastCommonCount++;
+            }
+            if (leastCommonCount < currentCount) {
+                leastCommon = temp;
+                currentCount = leastCommonCount;
             }
         }
-        noDuplicates = Arrays.copyOf(noDuplicates, noDuplicates.length + 1);
-        noDuplicates[noDuplicates.length - 1] = firstCopy[objectArray.length - 1];
+        return leastCommon;
 
-
-        Object[] noDups = noDuplicates;
-
-
-        Object[] copyArr = objectArray;
-        Arrays.sort(copyArr);
-
-        int leastCommonCount = 0;
-
-        for (int i = 0; i < noDuplicates.length; i++) {
-            if (getNumberOfOccurrences(firstCopy, noDuplicates[i]) < leastCommonCount) {
-                leastCommonCount = getNumberOfOccurrences(copyArr, copyArr[i]);
-            }
-        }
-
-        return leastCommonCount;
     }
 
 
