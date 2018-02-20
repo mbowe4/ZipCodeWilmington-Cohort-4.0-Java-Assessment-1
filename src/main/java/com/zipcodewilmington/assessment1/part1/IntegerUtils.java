@@ -44,25 +44,12 @@ public class IntegerUtils {
      * @return integer with identical digits in the reverse order
      */
     public static Integer reverseDigits(Integer val) {
-        String intTostr = val.toString();
 
-        String[] intArr = intTostr.split("");
-
-        String[] result = new String[intArr.length];
-        int count = 0;
-        for (int i = intArr.length-1; i >=0; i--) {
-            result[count] = intArr[i];
-            count++;
+        int reversedNum = 0;
+        while (val != 0) {
+            reversedNum = reversedNum * 10 + val % 10;
+            val = val / 10;
         }
-
-
-        StringBuilder sb = new StringBuilder();
-        for (String num : result) {
-            sb.append(num);
-        }
-
-        System.out.println(sb.toString());
-
-        return null;
+        return reversedNum;
     }
 }

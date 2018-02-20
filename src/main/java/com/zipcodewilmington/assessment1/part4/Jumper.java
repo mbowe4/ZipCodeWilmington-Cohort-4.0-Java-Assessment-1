@@ -7,9 +7,9 @@ public class Jumper {
      */
     public int jumps(int k, int j) {
 
-
-
-
-        return -1;
+        int numOfJumps = (int) Math.floor(k / j);
+        int remainder = k % j;
+        int result = numOfJumps + remainder;
+        return result;
     }
 }

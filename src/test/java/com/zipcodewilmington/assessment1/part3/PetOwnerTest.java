@@ -30,7 +30,7 @@ public class PetOwnerTest {
     public void addPetTest1() {
         // Given
         Pet expected = new Dog();
-        PetOwner po = new PetOwner("", null);
+        PetOwner po = new PetOwner("", (Pet[]) null);
 
         // When
         po.addPet(expected);

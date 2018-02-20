@@ -16,11 +16,11 @@ public class ArrayUtils {
 
         int count = 0;
 
-            for (int i = 0; i < objectArray.length; i++) {
-                if (objectArray[i].equals(objectToCount)) {
-                    count++;
-                }
+        for (int i = 0; i < objectArray.length; i++) {
+            if (objectArray[i].equals(objectToCount)) {
+                count++;
             }
+        }
         return count;
 
 
@@ -39,12 +39,12 @@ public class ArrayUtils {
         Object[] noDuplicates = new Integer[objectArray.length - duplicateCount];
         int count = 0;
 
-            for (int i = 0; i < objectArray.length; i++) {
-                if (!objectArray[i].equals(objectToRemove)) {
-                    noDuplicates[count] = objectArray[i];
-                    count++;
-                }
+        for (int i = 0; i < objectArray.length; i++) {
+            if (!objectArray[i].equals(objectToRemove)) {
+                noDuplicates[count] = objectArray[i];
+                count++;
             }
+        }
 
         return noDuplicates;
     }
@@ -55,20 +55,18 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the most frequently occuring object in the array
      */
     public static Object getMostCommon(Object[] objectArray) {
+
         int currentCount = 1, mostCommonCount;
         Object mostCommon = objectArray[0];
         Object temp = 0;
-        for (int i = 0; i < (objectArray.length - 1); i++)
-        {
+        for (int i = 0; i < (objectArray.length - 1); i++) {
             temp = objectArray[i];
             mostCommonCount = 0;
-            for (int j = 1; j < objectArray.length; j++)
-            {
+            for (int j = 1; j < objectArray.length; j++) {
                 if (temp == objectArray[j])
                     mostCommonCount++;
             }
-            if (mostCommonCount > currentCount)
-            {
+            if (mostCommonCount > currentCount) {
                 mostCommon = temp;
                 currentCount = mostCommonCount;
             }
@@ -84,6 +82,7 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
     public static Object getLeastCommon(Object[] objectArray) {
+
 
         Object[] firstCopy = objectArray;
 
@@ -101,7 +100,6 @@ public class ArrayUtils {
         Object[] noDups = noDuplicates;
 
 
-
         Object[] copyArr = objectArray;
         Arrays.sort(copyArr);
 
@@ -114,8 +112,8 @@ public class ArrayUtils {
         }
 
         return leastCommonCount;
-
     }
+
 
     /**
      * @param objectArray      an array of any type of Object
